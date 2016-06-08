@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<style>
+td {
+  text-align:center;
+  font-size: 18px;
+}
+#secret{
+  text-align: center;
+  font-size: 100px;
+  font-weight: bold;
+}#wrapper{
+  text-align: center;
+}
+#playReset{
+  width:200px;
+  height: 50px;
+  font-size: 40px;
+}
+body {
+  background-color: grey;
+}
+</style>
+<body>
+
+<div>
+  <p># of Players:
+  <select id="playerNum">
+    <option value="4" selected>4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+  </select>
+  Player ID:
+  <select id="id">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="7">8</option>
+  </select>
+  Seed:
+  <input placeholder="seed" id="seed"> 
+  Response:
+  <span id="resp">None</span>
+</p>
+<p id="secret"></p>
+<div id="wrapper"><button id="playReset">Play!</button></div>
+
+
+<div>
+  <p>Each Player recieves 3 points starting. If bankrupt, use bank. If bank is bankrupt, then each player places 3 back into bank.</p>
+  <p>Winning: 
+
+  <ul>
+      <li>
+        If both spies have identified each other,
+        each of them receives 3 points from the bank.
+      </li>
+      <li>
+        If either spy failed to identify his partner:
+      <ul>
+        <li>
+          Each double agent receives a point from the bank.
+        </li>
+        <li>
+          Each spy who incorrectly chose a double
+          agent must give one of his own points
+          to that agent.
+        </li>
+      </ul>
+      <li>
+        Each spy gives on of his own points to
+        any double agents who correctly
+        identified both spies.
+      </li>
+      <li>
+        Each double agent that correctly
+        identified both spies may attempt to
+        guess the exact code word and earn
+        one additional point from the bank.
+        They may choose to write down, or
+        whisper their guess if they wish to
+        keep it secret from the other players.
+      </li>
+      </li>
+  </ul>
+</div>
+<div id="google_translate_element"></div>
+</body>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="seedrandom.js"></script>
+<script src="script.js"></script>
+</html>
